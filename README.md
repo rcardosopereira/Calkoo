@@ -3,8 +3,8 @@ This is a repository for the VAT Calculator project. It uses Java, Selenium, Cuc
 
 ## Documentation
 If you would like to check out the documentation on manual testing, please visit the link below:<br/>
-***GitHub*** <https://github.com/rcardosopereira/Calkoo/tree/main/Documentation> <br/>
-***Google Drive*** <https://drive.google.com/drive/folders/14LuqiA3qRhJs_XH7yQNgIz2oda2mqvT2> <br/>
+***GitHub:*** <https://github.com/rcardosopereira/Calkoo/tree/main/Documentation> <br/>
+***Google Drive:*** <https://drive.google.com/drive/folders/14LuqiA3qRhJs_XH7yQNgIz2oda2mqvT2> <br/>
 
 ## Setup
 To run the project, you will need to have the following installed on your computer:<br/>
