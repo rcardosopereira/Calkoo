@@ -12,7 +12,7 @@ To run the project, you will need to have the following installed on your comput
 -Selenium (Version 4.9.0);<br/>
 -Cucumber (Version 7.12.0);<br/>
 -JUnit (Version 5.9.3);<br/>
--Google Chrome Browser (Version 113.0.5672.127 (Official Build) (64-bit));<br/>   
+-Google Chrome Browser (Version 113.0.5672.127 (Official Build) (64-bit)) ;<br/>   
 -Maven (build automation tool);<br/>
 
 ## Running the project (Installation)
