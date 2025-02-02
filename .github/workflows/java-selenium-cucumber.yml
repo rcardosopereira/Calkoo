@@ -32,20 +32,13 @@ jobs:
       - name: Install dependencies
         run: mvn install -DskipTests
 
-      - name: Download ChromeDriver
-        run: wget https://chromedriver.storage.googleapis.com/109.0.5414.74/chromedriver_linux64.zip -O /tmp/chromedriver.zip
-
-      - name: Unzip ChromeDriver
-        run: unzip /tmp/chromedriver.zip -d /tmp
-
       - name: Run tests
         run: mvn test
         env:
           DISPLAY: :99.0
-          PATH: /tmp:$PATH
 
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: test-results/
