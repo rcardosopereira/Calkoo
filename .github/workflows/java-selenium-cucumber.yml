@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Install dependencies
-        run: mvn clean install
+        run: mvn install -DskipTests
 
       - name: Run tests
         run: mvn test
@@ -38,7 +38,7 @@ jobs:
           DISPLAY: :99.0
 
       - name: Upload test results
-        uses: actions/upload-artifact@v3.2
+        uses: actions/upload-artifact@v3
         with:
           name: test-results
           path: test-results/
