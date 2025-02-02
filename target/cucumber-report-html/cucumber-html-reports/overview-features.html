@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Error Page</title>
+
+
+  <style>
+  .error-message {
+    color:red;
+    font-weight: bold;
+    background-color: lightpink;
+    font-family: monospace;
+  }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>TommyChallenge</td>
+        <td>1</td>
+      <td>02 Feb 2025, 22:54</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Error</h2>
+      <p>Something went wrong with project TommyChallenge, build 1</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="message">
+        <pre>net.masterthought.cucumber.ValidationException: File 'C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0065bfb6-ed5f-4e79-9891-31a4d8bb4485-result.json' is not proper Cucumber report!
+	at net.masterthought.cucumber.ReportParser.parseForFeature(ReportParser.java:104)
+	at net.masterthought.cucumber.ReportParser.parseJsonFiles(ReportParser.java:72)
+	at net.masterthought.cucumber.ReportBuilder.generateReports(ReportBuilder.java:97)
+	at net.masterthought.cucumber.CucumberReportGeneratorMojo.execute(CucumberReportGeneratorMojo.java:222)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:342)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:330)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:175)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:76)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:163)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:160)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:910)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `[Lnet.masterthought.cucumber.json.Feature;` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (InputStreamReader); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1601)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1375)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1322)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.handleNonArray(ObjectArrayDeserializer.java:343)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:194)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:24)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4593)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3561)
+	at net.masterthought.cucumber.ReportParser.parseForFeature(ReportParser.java:93)
+	... 28 more
+</pre>
+      </div>
+      <div>Trying to generate report from following files. Make sure they are valid cucumber report files:</div>
+      <div class="error-files">
+        <pre>
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0065bfb6-ed5f-4e79-9891-31a4d8bb4485-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\01f66bfb-101b-4a06-9a5e-4d001770da69-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\01ff5187-f5d6-4fa9-ae0c-30f5e44f63a7-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\021ed93d-9630-44e8-acd4-cde7f3dc836a-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\02c8f640-7dc1-44f2-ba46-b61b8c6af8d6-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\02cc24be-3884-4837-a06b-8c86105985bd-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\02db204d-46ac-4c24-a6bb-ce12d7a06333-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0307ff91-bdd7-4b3e-87a8-9311ec0188c6-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\03270585-b1f0-4243-85fb-ab8676fc3ca0-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\03975fc6-2ddc-437c-ade2-df1447259dcb-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\03cdba50-32b4-491e-a636-dbb034070425-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\04bad1bf-880a-4cde-9380-7d2b79f4fcfd-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\05e52770-b362-47ed-94d3-3aa482dfa6e9-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0611b03b-6b07-4251-abdb-f9a4d37165c0-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0650f2c8-a2fa-402e-a970-1fddd30319ec-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0660f993-fb20-4d7b-af1a-ef4dccb06aa1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\06be9b69-f5a8-463a-aa4c-273e4a208b30-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\07c95ba0-98a7-48bd-8cfa-ef97ce443405-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\07e45ecb-8819-410a-9640-3ff0644ab160-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\082ca2ba-6dc8-4bef-a381-fca7e4c6292c-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\08e63de0-7fb5-4c15-b45d-d99d87afb620-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0aeb5be1-e2cf-4c70-b76f-a2d5e9f09d9b-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0b6ac905-9a77-4f07-94cc-7b6702a6a7a4-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0bd6cdba-ea0a-4e40-b991-c4de950a9192-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0d6153fd-796b-4b06-8815-f66298a8195a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\0ef7869d-9e18-4e04-a9d7-2f238ccae014-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\11450d7c-692e-47d9-9cfb-df71e58512b8-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\11c47ec9-da6f-4bd6-ad44-6cd4189b7af2-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\1296a2c9-a6f8-4c2c-959e-a574cb66ac73-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\12c98156-662b-4fbc-83ec-83b4dfe607de-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\13993018-4ebe-47d3-a6f6-020806903976-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\141459e9-dd09-4710-b4bc-25f5af5b472a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\16559833-d682-41bb-9780-8283b0bae7fc-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\1689264e-dbff-4a93-b420-7dab043f894d-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\170d08d0-07c2-441d-be56-57c003267e74-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\17b47ac5-93b1-4242-8fe8-ea6439bb1177-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\18200019-db85-4ae0-ad19-450f62be69e2-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\19c71beb-061e-4011-bd85-e7d0af8b3f96-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\19c7c0f7-85b9-4c01-9263-bf0c0a9d4fe6-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\19e09f22-d5d2-4150-a134-77c277511c9b-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\1a411378-03e3-4a55-8aa7-2c1960b98f98-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\1d5bd30a-71c8-4ff9-a836-998eb6507649-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\1ed06d55-4b53-480b-8bad-800e2bc3c66e-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\20243995-c6fa-4a76-a6ec-fb282eacee75-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2134b447-8290-4821-b9a6-0122fd583d6b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\219e53bf-0dc9-49f6-8992-e41eb5410b9b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\22418d95-b07e-4d40-92a2-cc96a253f8a9-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2315bec3-c37c-4967-9d4e-b3e61735af92-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\260e010b-098a-43d2-9cd8-4bcc642ba55d-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2673c833-470a-4681-bc22-f32c9467b9d8-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2a99dc51-1004-4ecd-b30d-ef38e25fb812-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2ab05966-219c-481c-8c48-82664249ceb5-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2b264a4b-c14f-413c-8c0c-38e990526dec-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2c504242-3ed8-4a3b-88ac-7a3baaa5d6c4-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2cd48961-9c21-47d2-b43b-0e8bf7994376-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2dae15e2-9fd5-477d-9d1a-19ed3661e547-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2dbc461f-ae9f-4d93-b398-5b7438621af8-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2e59ce4e-d3a3-496e-b79b-e11564056059-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2e6f83f2-a3b4-44ed-bcf3-7ce3a4e1c6bb-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2e77d6a8-35d7-41ca-bff7-ca099554cb5e-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2ed48b15-be97-42c1-9268-3db5c3fe145e-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\2f93446d-f9cf-4c42-965e-42b10e63c755-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\30ea335a-7283-43a4-b54b-6ca152b11e6e-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3149e775-f2b3-42f9-aedd-c01538b2f701-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\31a58d5a-0fd5-4d38-bab7-c623cd53c91a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\344be549-890c-4dcc-a3ac-fe99d912c36c-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\349c212f-2c26-4162-985c-9c7e1a2724d7-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3513ca5d-4811-4ae8-a429-06f77b107391-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\35dbd73c-c873-45ea-95af-0716fdc99c4b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3940492c-5cff-4fe2-9d15-6fff1b6245ce-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\39c77170-51a1-42b3-a6dc-634781695d4f-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3a38c462-bddd-4778-b99a-52c3bc80c913-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3a7d526e-30a1-4ae4-b5b2-2bef3528af6b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3b694263-939b-4395-8acb-3f285cd054e1-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3bf1d7ab-f40c-4111-9e6a-4c0e37b66794-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3f19b579-9ce4-4600-9fd2-9647627ffa84-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3f65e7bf-b437-407d-96ab-0de0c616d798-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3f913ea6-ae37-4ef7-9a0e-13d0e7502535-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\3fa92472-53cf-4233-8dcb-25f65ab90e56-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\413116c7-4247-4bd8-bb04-c3cdb91e7af2-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\428041a6-ad26-428a-8f4c-613ea2743204-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\42933216-c99d-4617-b23f-298f0491863a-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\42a702a8-05bd-4ba5-adc1-0e962f2f2206-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\433f0865-eabd-4f83-a349-d3e9cb1aca68-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4502751e-a8e5-47fc-9f87-dd1c10d510ab-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\47f4cb82-5ec2-44b5-a70e-2b6e45f25ff7-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\48dc4df5-be0f-4788-9f5f-64b26bb01d74-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4a114a77-f0bb-4cd7-9467-4e076aa49566-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4a45ac8d-f180-4dd2-a594-d5d90a7f6136-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4aab1c00-9c0a-4b7b-8366-6721a4013791-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4c051ffa-59f7-4907-b849-6a2ec463860b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4d385311-f260-4376-bf16-716ab1389c2e-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4d5ce924-bd49-455e-ae03-5e0e857822ac-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4e19baab-2fb1-4f75-aa30-a5924c2f86d6-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4e67db59-ea1e-4729-9eda-3cb74d3c9438-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\4fb21f97-3189-44c9-b43b-4a4ff6f59e0c-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\508941ff-2346-433a-8e86-eebffe23b73f-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\516bd1e2-af5f-4b2e-a17d-08c7c0d118ba-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\519b6597-7211-4c53-aaa6-e36a46663165-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\538cfe28-b30b-43ff-b3b9-028edd779b8f-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\54443704-a10c-4f7d-8238-30753d377c0c-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\561aa208-8ac8-4c26-9745-11b07487328a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\56248352-8468-4f4a-9902-31e8938f8db8-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\566df1a8-e730-442e-ba32-5aac6dd21bdb-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\57e5a8f8-a4d8-4394-aa02-7cff44deb566-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\589a3773-64b5-4496-ba4d-c50d642f330b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\592898b3-6f23-4be0-a029-f0d0bffafc81-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5942e870-c9d8-497a-bd93-8630cff28eaa-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\59f051a6-584d-460c-8647-03a2d3d6a2ba-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5a12503f-2423-4e71-b507-bc1212fa71c1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5ab23c21-90e9-4f78-a93e-0d3709501715-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5aca9fbe-f8ef-46d6-acef-7aee6bcf11d0-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5b4db785-e5e1-41b1-a779-8ce2551aa0ca-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5bc87112-88c9-4d6e-bc68-08e3eab00e82-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5c2c3d49-d450-407c-a7f1-7c6e60d414dc-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5f232f47-d317-4dee-a306-e6c6eb4e87c1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\5ffb95ed-15b1-406f-9f59-fbd70149b448-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6003f6a5-d608-4e13-9176-edf0e946ae85-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6029dbc7-36b7-46a2-819a-4f694b0c8e12-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\606e7524-0457-48bb-abad-7f5fb6aa3a31-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\61597ec8-ef0a-48b2-ae6f-f6bcd7d43455-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\61a53313-cd17-43d1-a7ed-0d46a8da1cf5-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\61d4a9b5-b4dd-4e7d-8060-b6af8f377e83-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\61eea827-d03f-47a6-be4a-aa04ece04a54-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\63a011f5-782c-4066-9f80-bd728dcfa504-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\63ab099b-82fd-4cc2-81f0-e5eb9e6a01ee-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\64184131-cf6b-4611-9133-c0237c5af378-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\64d0b1a5-6f23-415d-883e-e5730f176d8f-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6706c92e-8467-48fc-9018-277ad19cec5e-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\67afd364-86a5-461b-bec2-c2ea4110c9c7-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\683f8461-1fb1-4672-8922-49c7b6a4d728-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\69057e71-97fe-4763-ad52-57ff8b11b678-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\699e8d3a-3540-4d93-9c05-ba2196af2f7f-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\69add502-a034-4ee8-b857-b31d90d71155-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\69dd00b3-7bbd-4030-b867-251a373a431a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6a0432a2-9ad9-410c-8ae5-245d5a6c78be-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6b8f80e7-5599-41c2-9c30-daf0c0857808-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6b942633-2cc8-4f8d-b5ae-66d4b4dfff4c-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6c637a1d-c68a-413b-a2a0-4117e0b58278-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6cb24906-5f4c-4a66-a01d-93d4bcca5fa7-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6cde3c45-1238-4e66-99a8-0a2c53b9ecf9-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6d5a8f31-e287-4c91-b0ed-3cc9967428ae-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6dec8059-9d94-4765-b085-71876b235a77-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6eec4b01-bf35-45a1-bb3c-2b920e5f2122-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\6f5203ee-2f1d-4ee6-9183-6335a3655a80-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\70ee06d4-d246-4d27-b157-6d3160469b8a-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\71978f51-5ce3-4f24-84c8-c7efc1553cfb-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\71f6af4b-5d6c-4d14-a5c2-9336428a6e42-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\74d7bf05-4a72-4292-9278-0b5036848d0a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\762afc5b-84c7-43cd-ab7f-581a9fc15f34-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\76747f61-1632-44df-9377-cc5082fae380-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\76cf1bee-ed40-4470-bf00-08de80dc38b1-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\76fe439a-b980-4069-99ec-a945914d80d5-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7826ca03-2588-4b14-b610-9528221ebdca-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7893ce67-b1f9-4752-8a74-cf6ec2cb9487-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7ac7c46a-cdbf-4aff-8be4-6b7173717637-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7ad94826-acf3-4de5-8d20-01cf61de5c5e-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7b31c46f-b27b-4700-bd84-2daa75b1cf0c-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7b3eb64c-91eb-4132-9525-456e2df650d0-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7c224731-f9ee-4b37-a5ab-a0e234bc6012-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7e951b06-ff20-407d-bc89-64af597ba7a8-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7effc64c-ec98-4dfb-aecb-0d909e2ab8b7-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7f1b1eba-ca8c-452c-a874-ec48e78388d3-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7f29b2c5-273f-456c-94ed-704e494190a0-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\7fbe2aa1-78bc-4ee7-ac7c-d7d7976fb2e5-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\826f6b02-43fd-4d08-92f7-90eb01a0cd22-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\85383f3f-ad16-494f-be42-5dee4bb182f5-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\855aae4c-946f-4e23-ac71-d7a1929652ba-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8594f643-89c8-44ab-af79-8bff9ed6542d-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\85c7093c-7c80-418f-b3d3-8fed418f5086-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8650fd3b-7261-44d4-a332-7bb985ba0784-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8706cb3b-f246-4efa-b906-7c1d1c26a9d1-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\893b5129-af63-4915-86b5-d7efd7abb0e8-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\89ea4251-0aab-4af3-acaa-18d65ed9be02-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8a5f47b8-dc2a-4bc7-bfbe-4540ddd985d8-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8ad0779f-64b1-4309-836d-c3d409d79dc1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8b9a9902-72a5-4eda-beb6-f6b302c8fda0-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8cb49098-fcbf-48ac-96c4-ac704786e05e-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\8d7d5691-c6a1-4394-ba3a-84db6f3fdc31-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\9275552a-f25e-4979-9694-18b974ed578b-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\95020777-36a0-4556-926b-e34d1a991f6b-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\95b3e9c5-901c-4c99-bdcc-de9c17ca28f1-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\99eaa8f3-e60f-4fad-a3da-72a9205e9c86-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\99f2acc8-1394-4fc3-8af1-3996946b028f-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\9a507070-4bd5-4f4d-a4d7-ba48b3873b59-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\9a59759d-dcae-4346-bf00-492f5540b60a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\9af3e46e-33c0-49ca-b440-1b7a22d2bc28-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\9b0c097c-aab9-4b1c-9c8b-8815581b6fda-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\9e2ed467-e9cc-4c95-89eb-a906a1a42d9f-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a0559af9-1a89-41d6-8660-913e70f2fd75-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a1ccc929-9dba-40a2-88b8-4eb68f6047b3-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a1e9b7b9-e5ca-4468-99cf-fb61aa4c34e0-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a25fa72c-bf79-4f99-bb4d-984b5fe4948e-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a2ca4210-fbcc-41ec-8152-55e6afad0367-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a5566b74-50ca-4170-a830-03e59f2af847-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a582fd1d-3e08-4169-bccb-853ea18b6a4f-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a592d8b5-0b18-49b9-979d-3ee3b206c6e1-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a761427b-3d19-44e7-b9fa-28563cf4bcb2-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a77f08a4-9bdb-46da-86dd-9ff0d9e56514-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a78c67b3-0c10-46b2-8085-b580e606531a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a85d35e2-f3ef-444e-a104-2e129fb0b529-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\a87bf7c2-af3f-401d-b0e0-b8744d906393-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\aa3b8dfc-f6fc-45c2-878c-3f8fc9412cdd-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\aaf2c3b6-ac5c-43fb-950c-4dda7c83ce21-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\abb93050-d8ad-4fec-9bd7-64aaca59cee4-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ac54572e-f2fa-4c99-bc34-70a316f557e1-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\acd821a4-44a3-4dc0-a78f-ed15df485331-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ada932d4-4b9d-4201-b896-d1c12bedbb46-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\adeb28b9-0d42-4e4f-a223-d5728d6d1215-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ae371f14-139f-4121-a70a-22b0019fa591-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ae8fd266-3d3a-4e07-8cd4-97bb61905072-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b041d438-b387-450a-a7ac-226bdba1a877-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b09aa0bf-0c18-4a6c-b9be-0345ae4f14c6-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b187b7db-9929-4123-8ace-6c1c025aa69b-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b292728f-5a0d-4317-bedd-ce3a78cb976d-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b3fe5c2d-40da-4577-a32b-c616d3ddb53b-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b6369064-a244-4298-9818-a627cc6bb5ff-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b6d2af8a-a583-41a3-87a1-8cbdc54d35b2-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b73f35f5-4ac9-4378-badf-11e240e2822c-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b75c92ba-9aa9-4705-8041-7ef9f35cf2a9-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b82aa87c-1ca5-409e-a33c-fed617eb8202-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b896372e-b1f5-484e-94d6-ea3fa227dd93-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\b9e86a29-dbfa-4ee7-b567-5964a19f5ec0-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\bc4c03e6-a536-4564-8ede-49527aeff2d7-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\bd7e5332-fbef-475d-bd36-e69133db3cca-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\bdddaeaf-b473-4dbd-899c-3f26b7230278-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\bdf7f389-b1d0-47df-8f6d-58bdbc34965e-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\bec12c72-1c38-4af4-a31d-250b68d44837-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c09829f0-71ef-47d8-8a86-ef2fbb482440-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c2a98c60-8b4f-4895-935d-11dd864c3f36-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c6b5de2b-a1c1-4377-bd6e-06b57a73afd2-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c6b9c43d-3083-4cbd-8e09-8920a3b615af-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c77fde2a-cc1d-40ba-ad61-d705315182a8-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c79e1fed-ccc7-43dd-9c7c-7269c3598ef1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c90bdbd6-51a3-47a3-bacd-c5aeb1624cdc-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\c9bf4d45-ca74-4351-9461-df0ba8de5bd1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ca58b346-3adb-4738-af44-a625d602d5be-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ca975a8c-899a-47b5-b8c0-fb9b9dc66535-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\cb5929bd-30f8-4b81-b555-7641d84dd44a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\cbeb32c3-75d6-4b3c-b8ab-3c23e94d0541-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\cd85436b-49bf-41d6-9f91-52f16e189fff-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\cf1ba792-569f-4a58-8071-813dd6076841-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d0a7cbab-9e46-4edd-806d-5a50fd9b0f72-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d0b44bfb-b7e2-4622-814d-cf92a1372247-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d1ee49da-6666-4ce1-8cd7-17dfe5d363b2-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d265d9f3-d8ea-48e0-9cc6-5055139a8496-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d2f795ee-0ba1-485d-b431-31a1d2d28c9b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d393dbb2-7fa3-4340-aaab-cff1110a939e-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d4e50dfb-68e6-43c6-a03c-0925193af336-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d5c2d920-c39e-484f-a03d-b0403759ec4a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d5e43200-ceef-4e37-ae5a-08b2643de1a9-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d5fa9b2a-5248-4179-819a-30b744067a6e-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\d60bf998-b0ad-4efd-ae84-7d88beb3a862-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\da0d0b73-1503-446e-a9f7-c7d4963bf335-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\da31891c-0220-4a05-9c90-4ea7edc2d9bb-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\da5dbe8f-350a-41c5-8b6a-7b34f25299d1-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\dac7143b-b51e-4249-a8a2-f24cf625940b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\dbc81f17-c8e0-4049-87bd-29944881fca0-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\dcfa746e-6839-466d-b4ee-2716bf9a87e9-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\dda2df4c-7695-4774-ac70-bb46f3a71356-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\de96eb93-ee8b-40b2-a383-00be0db86ec5-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ded1c1a3-2f36-420f-af6d-a080b332104c-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\dff2745e-7088-4b2a-83b2-b3dd7860cd9b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e00d444f-b1ba-46b0-ab7e-da1aa037cc18-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e219084f-bb03-4ce7-b7ec-c67a3f2c2eaf-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e2824487-930c-4aac-b9c3-8e11cf1a56a1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e2a59a33-b370-4981-b4ba-ce17b92f00aa-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e2b0d125-8f87-45fb-be86-11cfec244efe-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e2ef8348-70c8-4976-a2ff-3f29839e772c-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e42bf25f-b4d6-4c66-8af0-f5db7d90e4ac-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e4d8822f-842d-4099-b2a4-6cceb33f2702-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e4fffa9d-1c6d-43c1-8d1b-1d5a1b8d7150-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e5b17c51-5234-4040-ab1c-685dbec249ee-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e6534056-4369-4034-8d78-1af08bf24172-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e6ae8586-1938-4a30-a968-b47d1a4fff00-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e7de9c90-0ac6-4a04-a9fa-05befca2339b-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\e9950ba7-81e4-49cd-b3f1-bcdf4f4a7e3f-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ea14b004-fc89-4de9-aa75-cc071f0f9466-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ebecc58e-52bc-40f1-b0de-1df3ab793d9a-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ecab5dde-90f3-44ef-a36b-d73afb1624e7-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ecf1070a-48a6-4617-92d6-65d1b73cbd5c-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ed225450-4cf6-47ef-961f-ee341ad70378-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ed934423-8a72-4408-bf91-cd5596faa127-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ef122b67-4405-4b49-b8eb-0fb97588b9c1-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\efa8a626-7b21-4b59-a098-adf94cf3b405-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\efacd77c-1883-4813-9b91-e335392c0ba2-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\efc1725b-0ec6-47c3-aae2-eff67d985fc3-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\executor.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f0707c37-c12a-4d00-b564-c3fe710cd7d8-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f1193c81-c6b2-4f12-a3ea-50820485c44d-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f1e97631-6f24-4a65-bb61-c9b4f835ac79-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f4a5bfcf-f484-4d83-a0c1-8e37a9c2be84-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f5fe211e-a03b-4ca5-bd30-f680048fda34-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f707a6ee-49d7-4ce3-ab7a-1738827f00ce-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f9465a80-d216-4a42-b989-8a3a155d5f85-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\f9bc9c44-44af-4139-ae63-2210a2495400-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\fad0297f-6a16-4dac-816e-b2d097cc47d9-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\fb0b3ea9-dc69-4b10-99cd-062e2840067a-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\fceffdb8-fa3f-429d-b052-4e20702cb66f-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\fd0fb87a-0e9d-4619-89ac-d965853a83a8-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\fe6061f5-c381-46a4-9d02-bb3d943fa087-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\fea1c1c6-b998-49a6-ba45-c2cf863f7e68-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\fec5985f-8b86-4934-9f1e-9e7bd3cf65cb-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ff566e64-aa3e-4f7b-948e-18aeae1af324-container.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\allure-results\ffedf739-6076-4087-bc08-5c73d763ab65-result.json
+ C:\Rafael\Projetos Novos\NaoGitHub\DESAFIOS\Java\IntelliJ\BKP\Calkoo\target\cucumber-reports\cucumber.json
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
